@@ -5,10 +5,9 @@ em terminais VoIP!
 
 Meu cenário é:
            
-                           WAN1         WAN1           
-Asterisk ---pfsense===          < VPN >      ====Mikrotik/pfSense------ Interfone IP e ATA
-                           WAN2         WAN2
-                           
+                                   
+Asterisk ---pfsense(failover/loadbalance)===< VPN >====(failove/loadbalance)Mikrotik/pfSense------ Interfone IP e ATA
+                                                     
                            
 
 Meu problema era:
