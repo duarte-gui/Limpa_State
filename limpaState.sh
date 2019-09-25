@@ -17,8 +17,8 @@ if [ $ip_comeco_PR -eq 11 ];
 
 
         for i in $(cat unreachable.txt); do
-                sshpass -p  $j ssh -p 22222 root@$ip_do_pfsense pfctl -k $i -k $ip_do_VoIP
-                sshpass -p  $j ssh -p 22222 root@$ip_do_pfsense pfctl -k $ip_do_VoIP -k $i
+                sshpass -p  $j ssh -p 22 root@$ip_do_pfsense pfctl -k $i -k $ip_do_VoIP
+                sshpass -p  $j ssh -p 22 root@$ip_do_pfsense pfctl -k $ip_do_VoIP -k $i
                 echo "O ip do pfSense onde o equipamento SIP está offline é: $ip_do_pfsense"
                 echo "O ip do equipamento SIP off-line é: $i"
                 echo -n  > unreachable.txt
@@ -26,14 +26,13 @@ if [ $ip_comeco_PR -eq 11 ];
         done
 fi
 
-
-    if [ $ip_comeco_SP -eq 10 ];
+if [ $ip_comeco_SP -eq 10 ];
     then        
         eval  j=$senha_SP
 
         for i in $(cat unreachable.txt); do
-                sshpass -p  $j ssh -p 22222 root@$ip_do_pfsense pfctl -k $i -k $ip_do_VoIP
-                sshpass -p  $j ssh -p 22222 root@$ip_do_pfsense pfctl -k $ip_do_VoIP -k $i
+                sshpass -p  $j ssh -p 22 root@$ip_do_pfsense pfctl -k $i -k $ip_do_VoIP
+                sshpass -p  $j ssh -p 22 root@$ip_do_pfsense pfctl -k $ip_do_VoIP -k $i
                 echo "O ip do pfSense onde o equipamento SIP está offline é: $ip_do_pfsense"
                 echo "O ip do equipamento SIP off-line é: $i"
                 echo -n  > unreachable.txt
